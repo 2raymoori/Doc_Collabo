@@ -1,9 +1,7 @@
 import axios from 'axios';
 import React,{Fragment, useEffect, useState} from 'react'
 import { Link, useNavigate } from 'react-router-dom'
-import Login from '../Auth/Login';
 import Navbar from './Navbar';
-import DatatablePage from './Table';
 
 
 
@@ -11,26 +9,6 @@ import DatatablePage from './Table';
      let navigate = useNavigate();
     const [userDocuments,setUserDocuments] =useState([]);
 
-  let count = 0;
-  const fetchData = async()=>{
-
-
-        try {
-
-        const documents = await axios.get(`http://localhost:4000/docs/${localStorage.getItem("uId")}`)
-        // console.log(documents.data.data);
-        if(documents.data.status === 200){
-
-        setUserDocuments(documents.data.data)
-        }
-        else{
-        setUserDocuments("")
-        }
-        //  console.log(userDocuments)
-        } catch (error) {
-
-        }
-  }
   useEffect(function effectFunction() {
       console.log(localStorage.getItem("status"));
     const status = localStorage.getItem("status");
@@ -38,19 +16,9 @@ import DatatablePage from './Table';
     fetch(`http://localhost:4000/docs/${localStorage.getItem("uId")}`)
         .then(response => response.json())
         .then(({ data: books }) => {
-            // console.log(books)
             setUserDocuments(books);
         });
 }, [])
-/*
-()=>{
-    if (count ===0) {
-        fetchData();
-    }
-count ++;
-
-  },[]
-*/
 const downloadCount = async(docId) => {
     try {
         const docToUpdate = await axios.put(`http://localhost:4000/update/${docId}`)

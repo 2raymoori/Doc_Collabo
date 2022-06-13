@@ -3,8 +3,10 @@
 1. NodeJs Version 16 atleast
 2. npm Version 8 atleast
 
-execute npm install in the applicaation root folder (/doccolarbo)
-execute npm install in the client folder for the React UI Dependencies (/doccolabo/client)
+execute npm install in the applicaation root folder (/Doc_Collabo)
+execute npm install in the client folder for the React UI Dependencies (/Doc_Collabo/client)
+Then in the app root file,
+execute npm run dev
 
 # Applicaiton main Artecthure
 
