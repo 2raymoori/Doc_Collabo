@@ -39,7 +39,7 @@ else{
 
         <section className="container">
     <div className=' btnDocAdd'><Link to={"/upload"}>Upload Document(s)</Link></div>
-            {sharedDocuments.length === 0 ? <h2>Sorry No Document uploaded yet</h2>:
+            {sharedDocuments.length === 0 ? <h2>Sorry No Shared Document yet</h2>:
             <section>
                 <table className='table table-striped table-'>
                     <tr>
