@@ -1,6 +1,7 @@
 const { validationResult } = require("express-validator/check");
 const bcrypt = require("bcryptjs");
 const jwt = require("jsonwebtoken");
+const config = require("config");
 const UserModel = require("../Model/User.model");
 
 const userLogin = async (req, res) => {
@@ -29,7 +30,7 @@ const userLogin = async (req, res) => {
             email: currentUser.email,
             id: currentUser.id,
           };
-          jwt.sign(payload, "4472897njieS_!", (err, token) => {
+          jwt.sign(payload, config.get("TOKEN_KEY"), (err, token) => {
             if (err) throw err;
             return res.status(200).json({
               status: "Success",
@@ -96,7 +97,7 @@ const userSignUp = async (req, res) => {
       };
       jwt.sign(
         payload,
-        "4472897njieS_!",
+        config.get("TOKEN_KEY"),
         { expiresIn: 360000 },
         async (err, token) => {
           if (err) {
