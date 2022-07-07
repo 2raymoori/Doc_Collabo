@@ -1,0 +1,4 @@
+{
+    "dbURL":"mongodb://localhost:27017/DOC_COLLABO",
+    "TOKEN_KEY":"4472897njieS_!"
+}
