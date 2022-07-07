@@ -90,10 +90,7 @@ const Dashboard = (props) => {
                             Share Doc
                           </button>
                         </td>
-                        <td>
-                          {e.downloadCount}
-                          {e.docType}
-                        </td>
+                        <td>{e.downloadCount}</td>
                         <td>
                           <div className="fileLogoCont">
                             <img

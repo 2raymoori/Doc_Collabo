@@ -7,13 +7,13 @@ const PORT = process.env.PORT || 4000;
 const app = express();
 // initialize and instantiate db instance
 dbHandle();
-app.use(express.json());
-// app.use(cors());
+app.use(cors());
 app.use(
   fileUpload({
     createParentPath: true,
   })
 );
+app.use(express.json());
 // define server public folder
 app.use(express.static(__dirname + "/public"));
 
